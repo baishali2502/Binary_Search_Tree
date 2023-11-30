@@ -60,5 +60,25 @@ public class BST
 		}
 		return root;
 	}
+	
+	/*
+	 * @desc:This method checks if an element is present in the BST or not
+	 * 
+	 * @params:root of the BST and the element to be searched
+	 * 
+	 * @returns:boolean -->true if the element is present and false if not present
+	 */
+	public boolean search(Node root,int k)
+	{
+		if(root==null)
+			return false;
+		
+		if(root.data==k)
+			return true;
+		else if(root.data<k)
+			return search(root.right,k);
+		else
+			return search(root.left,k);
+	}
 
 }
